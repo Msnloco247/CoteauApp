@@ -2,7 +2,7 @@ import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/r
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Menu from './components/Menu';
-import Page from './pages/Page';
+import Inicio from './pages/Inicio/Inicio';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -33,6 +33,12 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Genero from './pages/genero/Genero';
+import Edad from './pages/edad/Edad';
+import Universidades from './pages/universidades/Universidades';
+import Clima from './pages/clima/Clima';
+import Noticias from './pages/noticias/Noticias';
+import Contacto from './pages/contacto/Contacto';
 
 setupIonicReact();
 
@@ -43,12 +49,17 @@ const App: React.FC = () => {
         <IonSplitPane contentId="main">
           <Menu />
           <IonRouterOutlet id="main">
-            <Route path="/" exact={true}>
-              <Redirect to="/folder/Inbox" />
+          <Route path="/" exact={true}>
+              <Redirect to="/Inicio" />
             </Route>
-            <Route path="/folder/:name" exact={true}>
-              <Page />
-            </Route>
+            
+            <Route path="/Inicio" component={Inicio} exact={true} />
+            <Route path="/Genero" component={Genero} exact={true} />
+            <Route path="/Edad" component={Edad} exact={true} />
+            <Route path="/Universidad" component={Universidades} exact={true} />
+            <Route path="/Clima" component={Clima} exact={true} />
+            <Route path="/Noticia" component={Noticias} exact={true} />
+            <Route path="/Contacto" component={Contacto} exact={true} />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

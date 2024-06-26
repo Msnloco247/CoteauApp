@@ -11,7 +11,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { addSharp, archiveOutline, archiveSharp, bookOutline, bookmarkOutline, calculatorOutline, calendarNumber, calendarNumberOutline, heartOutline, heartSharp, home, languageOutline, logoWordpress, mailOutline, mailSharp, moon, paperPlaneOutline, paperPlaneSharp, person, shareSharp, tabletPortrait, trailSign, trashOutline, trashSharp, videocamOffOutline, videocamOutline, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -23,44 +23,49 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/folder/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    title: 'Inicio 💬',
+    url: '/Inicio',
+    iosIcon: home,
+    mdIcon: home
   },
   {
-    title: 'Outbox',
-    url: '/folder/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    title: 'Genero Por Nombre 💬',
+    url: '/Genero',
+    iosIcon: home,
+    mdIcon: home
   },
   {
-    title: 'Favorites',
-    url: '/folder/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
+    title: 'Edad Por Nombre 💬',
+    url: '/Edad',
+    iosIcon: home,
+    mdIcon: home
   },
   {
-    title: 'Archived',
-    url: '/folder/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
+    title: 'Universidad Por Pais 💬',
+    url: '/Universidad',
+    iosIcon: home,
+    mdIcon: home
   },
   {
-    title: 'Trash',
-    url: '/folder/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
+    title: 'Clima en RD 💬',
+    url: '/Clima',
+    iosIcon: home,
+    mdIcon: home
   },
   {
-    title: 'Spam',
-    url: '/folder/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
+    title: 'Noticias 💬',
+    url: '/Noticia',
+    iosIcon: home,
+    mdIcon: home
+  },
+  {
+    title: 'Contacto 💬',
+    url: '/Contacto',
+    iosIcon: home,
+    mdIcon: home
   }
 ];
 
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 const Menu: React.FC = () => {
   const location = useLocation();
@@ -69,8 +74,10 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
+          <IonListHeader>Aplicación Móvil Temática</IonListHeader>
+          <IonNote>Abner Aguilar</IonNote>
+
+
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
@@ -81,18 +88,12 @@ const Menu: React.FC = () => {
               </IonMenuToggle>
             );
           })}
+
+          
         </IonList>
 
-        <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon aria-hidden="true" slot="start" icon={bookmarkOutline} />
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
-          ))}
-        </IonList>
       </IonContent>
+      
     </IonMenu>
   );
 };
